@@ -54,8 +54,9 @@ class VerificadorTipos:
             )
             self.tabla_simbolos.definir(param.nombre, simbolo_param)
         
-        # Verificar el bloque
-        self.verificar_bloque(decl.bloque)
+        # Verificar las sentencias del bloque directamente (sin crear nuevo ámbito)
+        for sentencia in decl.bloque.sentencias:
+            self.verificar_sentencia(sentencia)
         
         # Restaurar ámbito
         self.tabla_simbolos = ambito_anterior

@@ -104,6 +104,8 @@ class ConstructorAST(EmojXVisitor):
             return self.visit(ctx.sentencia_expresion())
         elif ctx.sentencia_asignacion():
             return self.visit(ctx.sentencia_asignacion())
+        elif ctx.declaracion_variable():
+            return self.visit(ctx.declaracion_variable())
         return None
     
     def visitSentencia_si(self, ctx: EmojXParser.Sentencia_siContext):

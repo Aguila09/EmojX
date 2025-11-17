@@ -253,9 +253,10 @@ class Interprete:
                 )
                 self.tabla_simbolos.definir(param.nombre, simbolo_param)
             
-            # Ejecutar el cuerpo de la función
+            # Ejecutar el cuerpo de la función directamente (sin crear nuevo ámbito)
             try:
-                self.ejecutar_bloque(decl_funcion.bloque)
+                for sentencia in decl_funcion.bloque.sentencias:
+                    self.ejecutar_sentencia(sentencia)
                 return None  # Si no hay retorno explícito
             except ExcepcionRetorno as e:
                 return e.valor

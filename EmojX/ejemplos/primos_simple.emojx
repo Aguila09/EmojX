@@ -1,0 +1,32 @@
+💭 Versión simplificada del algoritmo de primos
+
+🎯 esPrimo 🔓🔢 n🔒 🎨 🎲 🌀
+    🎲 🔓n 🔻 2🔒 🌀
+        🎁 ❌🔚
+    🔄
+    
+    🎲 🔓n 🟰🟰 2🔒 🌀
+        🎁 ✅🔚
+    🔄
+    
+    🔢 divisor 🟰 2🔚
+    🌪️ 🔓divisor 🔻 n🔒 🌀
+        🔢 resto 🟰 n 🎯 divisor🔚
+        🎲 🔓resto 🟰🟰 0🔒 🌀
+            🎁 ❌🔚
+        🔄
+        divisor 🟰 divisor ➕ 1🔚
+    🔄
+    
+    🎁 ✅🔚
+🔄
+
+📢🔓📖Números primos del 1 al 15:📖🔒🔚
+
+🔢 n 🟰 2🔚
+🌪️ 🔓n 🔻🟰 15🔒 🌀
+    🎲 🔓esPrimo🔓n🔒🔒 🌀
+        📢🔓n🔒🔚
+    🔄
+    n 🟰 n ➕ 1🔚
+🔄

@@ -28,6 +28,7 @@ sentencia
     | sentencia_imprimir
     | sentencia_expresion
     | sentencia_asignacion
+    | declaracion_variable
     ;
 
 sentencia_si: '🎲' '🔓' expresion '🔒' bloque ('🎰' bloque)?;

@@ -11,7 +11,7 @@ else:
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3)")
-        buf.write("\u00ce\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\u00cf\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16")
         buf.write("\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22\4\23\t\23")
         buf.write("\4\24\t\24\4\25\t\25\3\2\7\2,\n\2\f\2\16\2/\13\2\3\2\3")
@@ -19,79 +19,79 @@ def serializedATN():
         buf.write("\3\4\3\5\3\5\3\5\3\5\5\5D\n\5\3\5\3\5\3\5\3\5\3\5\3\6")
         buf.write("\3\6\3\6\7\6N\n\6\f\6\16\6Q\13\6\3\7\3\7\3\7\3\b\3\b\7")
         buf.write("\bX\n\b\f\b\16\b[\13\b\3\b\3\b\3\t\3\t\3\t\3\t\3\t\3\t")
-        buf.write("\3\t\3\t\5\tg\n\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\5\np\n\n")
-        buf.write("\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\5\f{\n\f\3")
-        buf.write("\f\3\f\5\f\177\n\f\3\f\3\f\5\f\u0083\n\f\3\f\3\f\3\f\3")
-        buf.write("\r\3\r\5\r\u008a\n\r\3\r\3\r\3\16\3\16\3\16\3\16\3\16")
-        buf.write("\3\16\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\21\3\21")
-        buf.write("\3\21\3\21\3\21\3\21\5\21\u00a2\n\21\3\21\3\21\3\21\3")
-        buf.write("\21\3\21\3\21\3\21\3\21\3\21\7\21\u00ad\n\21\f\21\16\21")
-        buf.write("\u00b0\13\21\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3")
-        buf.write("\22\5\22\u00bb\n\22\3\23\3\23\3\23\5\23\u00c0\n\23\3\23")
-        buf.write("\3\23\3\24\3\24\3\24\7\24\u00c7\n\24\f\24\16\24\u00ca")
-        buf.write("\13\24\3\25\3\25\3\25\2\3 \26\2\4\6\b\n\f\16\20\22\24")
-        buf.write("\26\30\32\34\36 \"$&(\2\6\4\2\5\5\22\25\3\2\26\33\3\2")
-        buf.write("\34\35\4\2\f\f\37\"\2\u00d8\2-\3\2\2\2\4\65\3\2\2\2\6")
-        buf.write("\67\3\2\2\2\b?\3\2\2\2\nJ\3\2\2\2\fR\3\2\2\2\16U\3\2\2")
-        buf.write("\2\20f\3\2\2\2\22h\3\2\2\2\24q\3\2\2\2\26w\3\2\2\2\30")
-        buf.write("\u0087\3\2\2\2\32\u008d\3\2\2\2\34\u0093\3\2\2\2\36\u0096")
-        buf.write("\3\2\2\2 \u00a1\3\2\2\2\"\u00ba\3\2\2\2$\u00bc\3\2\2\2")
-        buf.write("&\u00c3\3\2\2\2(\u00cb\3\2\2\2*,\5\4\3\2+*\3\2\2\2,/\3")
-        buf.write("\2\2\2-+\3\2\2\2-.\3\2\2\2.\60\3\2\2\2/-\3\2\2\2\60\61")
-        buf.write("\7\2\2\3\61\3\3\2\2\2\62\66\5\6\4\2\63\66\5\b\5\2\64\66")
-        buf.write("\5\20\t\2\65\62\3\2\2\2\65\63\3\2\2\2\65\64\3\2\2\2\66")
-        buf.write("\5\3\2\2\2\678\5(\25\28;\7&\2\29:\7\3\2\2:<\5 \21\2;9")
-        buf.write("\3\2\2\2;<\3\2\2\2<=\3\2\2\2=>\7\4\2\2>\7\3\2\2\2?@\7")
-        buf.write("\5\2\2@A\7&\2\2AC\7\6\2\2BD\5\n\6\2CB\3\2\2\2CD\3\2\2")
-        buf.write("\2DE\3\2\2\2EF\7\7\2\2FG\7\b\2\2GH\5(\25\2HI\5\16\b\2")
-        buf.write("I\t\3\2\2\2JO\5\f\7\2KL\7\t\2\2LN\5\f\7\2MK\3\2\2\2NQ")
-        buf.write("\3\2\2\2OM\3\2\2\2OP\3\2\2\2P\13\3\2\2\2QO\3\2\2\2RS\5")
-        buf.write("(\25\2ST\7&\2\2T\r\3\2\2\2UY\7\n\2\2VX\5\20\t\2WV\3\2")
-        buf.write("\2\2X[\3\2\2\2YW\3\2\2\2YZ\3\2\2\2Z\\\3\2\2\2[Y\3\2\2")
-        buf.write("\2\\]\7\13\2\2]\17\3\2\2\2^g\5\16\b\2_g\5\22\n\2`g\5\24")
-        buf.write("\13\2ag\5\26\f\2bg\5\30\r\2cg\5\32\16\2dg\5\34\17\2eg")
-        buf.write("\5\36\20\2f^\3\2\2\2f_\3\2\2\2f`\3\2\2\2fa\3\2\2\2fb\3")
-        buf.write("\2\2\2fc\3\2\2\2fd\3\2\2\2fe\3\2\2\2g\21\3\2\2\2hi\7\f")
-        buf.write("\2\2ij\7\6\2\2jk\5 \21\2kl\7\7\2\2lo\5\16\b\2mn\7\r\2")
-        buf.write("\2np\5\16\b\2om\3\2\2\2op\3\2\2\2p\23\3\2\2\2qr\7\16\2")
-        buf.write("\2rs\7\6\2\2st\5 \21\2tu\7\7\2\2uv\5\16\b\2v\25\3\2\2")
-        buf.write("\2wx\7\17\2\2xz\7\6\2\2y{\5\36\20\2zy\3\2\2\2z{\3\2\2")
-        buf.write("\2{|\3\2\2\2|~\7\4\2\2}\177\5 \21\2~}\3\2\2\2~\177\3\2")
-        buf.write("\2\2\177\u0080\3\2\2\2\u0080\u0082\7\4\2\2\u0081\u0083")
-        buf.write("\5 \21\2\u0082\u0081\3\2\2\2\u0082\u0083\3\2\2\2\u0083")
-        buf.write("\u0084\3\2\2\2\u0084\u0085\7\7\2\2\u0085\u0086\5\16\b")
-        buf.write("\2\u0086\27\3\2\2\2\u0087\u0089\7\20\2\2\u0088\u008a\5")
-        buf.write(" \21\2\u0089\u0088\3\2\2\2\u0089\u008a\3\2\2\2\u008a\u008b")
-        buf.write("\3\2\2\2\u008b\u008c\7\4\2\2\u008c\31\3\2\2\2\u008d\u008e")
-        buf.write("\7\21\2\2\u008e\u008f\7\6\2\2\u008f\u0090\5 \21\2\u0090")
-        buf.write("\u0091\7\7\2\2\u0091\u0092\7\4\2\2\u0092\33\3\2\2\2\u0093")
-        buf.write("\u0094\5 \21\2\u0094\u0095\7\4\2\2\u0095\35\3\2\2\2\u0096")
-        buf.write("\u0097\7&\2\2\u0097\u0098\7\3\2\2\u0098\u0099\5 \21\2")
-        buf.write("\u0099\u009a\7\4\2\2\u009a\37\3\2\2\2\u009b\u009c\b\21")
-        buf.write("\1\2\u009c\u00a2\5\"\22\2\u009d\u009e\7\36\2\2\u009e\u00a2")
-        buf.write("\5 \21\4\u009f\u00a0\7\23\2\2\u00a0\u00a2\5 \21\3\u00a1")
-        buf.write("\u009b\3\2\2\2\u00a1\u009d\3\2\2\2\u00a1\u009f\3\2\2\2")
-        buf.write("\u00a2\u00ae\3\2\2\2\u00a3\u00a4\f\7\2\2\u00a4\u00a5\t")
-        buf.write("\2\2\2\u00a5\u00ad\5 \21\b\u00a6\u00a7\f\6\2\2\u00a7\u00a8")
-        buf.write("\t\3\2\2\u00a8\u00ad\5 \21\7\u00a9\u00aa\f\5\2\2\u00aa")
-        buf.write("\u00ab\t\4\2\2\u00ab\u00ad\5 \21\6\u00ac\u00a3\3\2\2\2")
-        buf.write("\u00ac\u00a6\3\2\2\2\u00ac\u00a9\3\2\2\2\u00ad\u00b0\3")
-        buf.write("\2\2\2\u00ae\u00ac\3\2\2\2\u00ae\u00af\3\2\2\2\u00af!")
-        buf.write("\3\2\2\2\u00b0\u00ae\3\2\2\2\u00b1\u00bb\7$\2\2\u00b2")
-        buf.write("\u00bb\7%\2\2\u00b3\u00bb\7#\2\2\u00b4\u00bb\7&\2\2\u00b5")
-        buf.write("\u00bb\5$\23\2\u00b6\u00b7\7\6\2\2\u00b7\u00b8\5 \21\2")
-        buf.write("\u00b8\u00b9\7\7\2\2\u00b9\u00bb\3\2\2\2\u00ba\u00b1\3")
-        buf.write("\2\2\2\u00ba\u00b2\3\2\2\2\u00ba\u00b3\3\2\2\2\u00ba\u00b4")
-        buf.write("\3\2\2\2\u00ba\u00b5\3\2\2\2\u00ba\u00b6\3\2\2\2\u00bb")
-        buf.write("#\3\2\2\2\u00bc\u00bd\7&\2\2\u00bd\u00bf\7\6\2\2\u00be")
-        buf.write("\u00c0\5&\24\2\u00bf\u00be\3\2\2\2\u00bf\u00c0\3\2\2\2")
-        buf.write("\u00c0\u00c1\3\2\2\2\u00c1\u00c2\7\7\2\2\u00c2%\3\2\2")
-        buf.write("\2\u00c3\u00c8\5 \21\2\u00c4\u00c5\7\t\2\2\u00c5\u00c7")
-        buf.write("\5 \21\2\u00c6\u00c4\3\2\2\2\u00c7\u00ca\3\2\2\2\u00c8")
-        buf.write("\u00c6\3\2\2\2\u00c8\u00c9\3\2\2\2\u00c9\'\3\2\2\2\u00ca")
-        buf.write("\u00c8\3\2\2\2\u00cb\u00cc\t\5\2\2\u00cc)\3\2\2\2\24-")
-        buf.write("\65;COYfoz~\u0082\u0089\u00a1\u00ac\u00ae\u00ba\u00bf")
-        buf.write("\u00c8")
+        buf.write("\3\t\3\t\3\t\5\th\n\t\3\n\3\n\3\n\3\n\3\n\3\n\3\n\5\n")
+        buf.write("q\n\n\3\13\3\13\3\13\3\13\3\13\3\13\3\f\3\f\3\f\5\f|\n")
+        buf.write("\f\3\f\3\f\5\f\u0080\n\f\3\f\3\f\5\f\u0084\n\f\3\f\3\f")
+        buf.write("\3\f\3\r\3\r\5\r\u008b\n\r\3\r\3\r\3\16\3\16\3\16\3\16")
+        buf.write("\3\16\3\16\3\17\3\17\3\17\3\20\3\20\3\20\3\20\3\20\3\21")
+        buf.write("\3\21\3\21\3\21\3\21\3\21\5\21\u00a3\n\21\3\21\3\21\3")
+        buf.write("\21\3\21\3\21\3\21\3\21\3\21\3\21\7\21\u00ae\n\21\f\21")
+        buf.write("\16\21\u00b1\13\21\3\22\3\22\3\22\3\22\3\22\3\22\3\22")
+        buf.write("\3\22\3\22\5\22\u00bc\n\22\3\23\3\23\3\23\5\23\u00c1\n")
+        buf.write("\23\3\23\3\23\3\24\3\24\3\24\7\24\u00c8\n\24\f\24\16\24")
+        buf.write("\u00cb\13\24\3\25\3\25\3\25\2\3 \26\2\4\6\b\n\f\16\20")
+        buf.write("\22\24\26\30\32\34\36 \"$&(\2\6\4\2\5\5\22\25\3\2\26\33")
+        buf.write("\3\2\34\35\4\2\f\f\37\"\2\u00da\2-\3\2\2\2\4\65\3\2\2")
+        buf.write("\2\6\67\3\2\2\2\b?\3\2\2\2\nJ\3\2\2\2\fR\3\2\2\2\16U\3")
+        buf.write("\2\2\2\20g\3\2\2\2\22i\3\2\2\2\24r\3\2\2\2\26x\3\2\2\2")
+        buf.write("\30\u0088\3\2\2\2\32\u008e\3\2\2\2\34\u0094\3\2\2\2\36")
+        buf.write("\u0097\3\2\2\2 \u00a2\3\2\2\2\"\u00bb\3\2\2\2$\u00bd\3")
+        buf.write("\2\2\2&\u00c4\3\2\2\2(\u00cc\3\2\2\2*,\5\4\3\2+*\3\2\2")
+        buf.write("\2,/\3\2\2\2-+\3\2\2\2-.\3\2\2\2.\60\3\2\2\2/-\3\2\2\2")
+        buf.write("\60\61\7\2\2\3\61\3\3\2\2\2\62\66\5\6\4\2\63\66\5\b\5")
+        buf.write("\2\64\66\5\20\t\2\65\62\3\2\2\2\65\63\3\2\2\2\65\64\3")
+        buf.write("\2\2\2\66\5\3\2\2\2\678\5(\25\28;\7&\2\29:\7\3\2\2:<\5")
+        buf.write(" \21\2;9\3\2\2\2;<\3\2\2\2<=\3\2\2\2=>\7\4\2\2>\7\3\2")
+        buf.write("\2\2?@\7\5\2\2@A\7&\2\2AC\7\6\2\2BD\5\n\6\2CB\3\2\2\2")
+        buf.write("CD\3\2\2\2DE\3\2\2\2EF\7\7\2\2FG\7\b\2\2GH\5(\25\2HI\5")
+        buf.write("\16\b\2I\t\3\2\2\2JO\5\f\7\2KL\7\t\2\2LN\5\f\7\2MK\3\2")
+        buf.write("\2\2NQ\3\2\2\2OM\3\2\2\2OP\3\2\2\2P\13\3\2\2\2QO\3\2\2")
+        buf.write("\2RS\5(\25\2ST\7&\2\2T\r\3\2\2\2UY\7\n\2\2VX\5\20\t\2")
+        buf.write("WV\3\2\2\2X[\3\2\2\2YW\3\2\2\2YZ\3\2\2\2Z\\\3\2\2\2[Y")
+        buf.write("\3\2\2\2\\]\7\13\2\2]\17\3\2\2\2^h\5\16\b\2_h\5\22\n\2")
+        buf.write("`h\5\24\13\2ah\5\26\f\2bh\5\30\r\2ch\5\32\16\2dh\5\34")
+        buf.write("\17\2eh\5\36\20\2fh\5\6\4\2g^\3\2\2\2g_\3\2\2\2g`\3\2")
+        buf.write("\2\2ga\3\2\2\2gb\3\2\2\2gc\3\2\2\2gd\3\2\2\2ge\3\2\2\2")
+        buf.write("gf\3\2\2\2h\21\3\2\2\2ij\7\f\2\2jk\7\6\2\2kl\5 \21\2l")
+        buf.write("m\7\7\2\2mp\5\16\b\2no\7\r\2\2oq\5\16\b\2pn\3\2\2\2pq")
+        buf.write("\3\2\2\2q\23\3\2\2\2rs\7\16\2\2st\7\6\2\2tu\5 \21\2uv")
+        buf.write("\7\7\2\2vw\5\16\b\2w\25\3\2\2\2xy\7\17\2\2y{\7\6\2\2z")
+        buf.write("|\5\36\20\2{z\3\2\2\2{|\3\2\2\2|}\3\2\2\2}\177\7\4\2\2")
+        buf.write("~\u0080\5 \21\2\177~\3\2\2\2\177\u0080\3\2\2\2\u0080\u0081")
+        buf.write("\3\2\2\2\u0081\u0083\7\4\2\2\u0082\u0084\5 \21\2\u0083")
+        buf.write("\u0082\3\2\2\2\u0083\u0084\3\2\2\2\u0084\u0085\3\2\2\2")
+        buf.write("\u0085\u0086\7\7\2\2\u0086\u0087\5\16\b\2\u0087\27\3\2")
+        buf.write("\2\2\u0088\u008a\7\20\2\2\u0089\u008b\5 \21\2\u008a\u0089")
+        buf.write("\3\2\2\2\u008a\u008b\3\2\2\2\u008b\u008c\3\2\2\2\u008c")
+        buf.write("\u008d\7\4\2\2\u008d\31\3\2\2\2\u008e\u008f\7\21\2\2\u008f")
+        buf.write("\u0090\7\6\2\2\u0090\u0091\5 \21\2\u0091\u0092\7\7\2\2")
+        buf.write("\u0092\u0093\7\4\2\2\u0093\33\3\2\2\2\u0094\u0095\5 \21")
+        buf.write("\2\u0095\u0096\7\4\2\2\u0096\35\3\2\2\2\u0097\u0098\7")
+        buf.write("&\2\2\u0098\u0099\7\3\2\2\u0099\u009a\5 \21\2\u009a\u009b")
+        buf.write("\7\4\2\2\u009b\37\3\2\2\2\u009c\u009d\b\21\1\2\u009d\u00a3")
+        buf.write("\5\"\22\2\u009e\u009f\7\36\2\2\u009f\u00a3\5 \21\4\u00a0")
+        buf.write("\u00a1\7\23\2\2\u00a1\u00a3\5 \21\3\u00a2\u009c\3\2\2")
+        buf.write("\2\u00a2\u009e\3\2\2\2\u00a2\u00a0\3\2\2\2\u00a3\u00af")
+        buf.write("\3\2\2\2\u00a4\u00a5\f\7\2\2\u00a5\u00a6\t\2\2\2\u00a6")
+        buf.write("\u00ae\5 \21\b\u00a7\u00a8\f\6\2\2\u00a8\u00a9\t\3\2\2")
+        buf.write("\u00a9\u00ae\5 \21\7\u00aa\u00ab\f\5\2\2\u00ab\u00ac\t")
+        buf.write("\4\2\2\u00ac\u00ae\5 \21\6\u00ad\u00a4\3\2\2\2\u00ad\u00a7")
+        buf.write("\3\2\2\2\u00ad\u00aa\3\2\2\2\u00ae\u00b1\3\2\2\2\u00af")
+        buf.write("\u00ad\3\2\2\2\u00af\u00b0\3\2\2\2\u00b0!\3\2\2\2\u00b1")
+        buf.write("\u00af\3\2\2\2\u00b2\u00bc\7$\2\2\u00b3\u00bc\7%\2\2\u00b4")
+        buf.write("\u00bc\7#\2\2\u00b5\u00bc\7&\2\2\u00b6\u00bc\5$\23\2\u00b7")
+        buf.write("\u00b8\7\6\2\2\u00b8\u00b9\5 \21\2\u00b9\u00ba\7\7\2\2")
+        buf.write("\u00ba\u00bc\3\2\2\2\u00bb\u00b2\3\2\2\2\u00bb\u00b3\3")
+        buf.write("\2\2\2\u00bb\u00b4\3\2\2\2\u00bb\u00b5\3\2\2\2\u00bb\u00b6")
+        buf.write("\3\2\2\2\u00bb\u00b7\3\2\2\2\u00bc#\3\2\2\2\u00bd\u00be")
+        buf.write("\7&\2\2\u00be\u00c0\7\6\2\2\u00bf\u00c1\5&\24\2\u00c0")
+        buf.write("\u00bf\3\2\2\2\u00c0\u00c1\3\2\2\2\u00c1\u00c2\3\2\2\2")
+        buf.write("\u00c2\u00c3\7\7\2\2\u00c3%\3\2\2\2\u00c4\u00c9\5 \21")
+        buf.write("\2\u00c5\u00c6\7\t\2\2\u00c6\u00c8\5 \21\2\u00c7\u00c5")
+        buf.write("\3\2\2\2\u00c8\u00cb\3\2\2\2\u00c9\u00c7\3\2\2\2\u00c9")
+        buf.write("\u00ca\3\2\2\2\u00ca\'\3\2\2\2\u00cb\u00c9\3\2\2\2\u00cc")
+        buf.write("\u00cd\t\5\2\2\u00cd)\3\2\2\2\24-\65;COYgp{\177\u0083")
+        buf.write("\u008a\u00a2\u00ad\u00af\u00bb\u00c0\u00c9")
         return buf.getvalue()
 
 
@@ -650,7 +650,7 @@ class EmojXParser ( Parser ):
             self.state = 87
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EmojXParser.T__3) | (1 << EmojXParser.T__7) | (1 << EmojXParser.T__9) | (1 << EmojXParser.T__11) | (1 << EmojXParser.T__12) | (1 << EmojXParser.T__13) | (1 << EmojXParser.T__14) | (1 << EmojXParser.T__16) | (1 << EmojXParser.T__27) | (1 << EmojXParser.BOOLEANO) | (1 << EmojXParser.NUMERO) | (1 << EmojXParser.CADENA) | (1 << EmojXParser.IDENTIFICADOR))) != 0):
+            while (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EmojXParser.T__3) | (1 << EmojXParser.T__7) | (1 << EmojXParser.T__9) | (1 << EmojXParser.T__11) | (1 << EmojXParser.T__12) | (1 << EmojXParser.T__13) | (1 << EmojXParser.T__14) | (1 << EmojXParser.T__16) | (1 << EmojXParser.T__27) | (1 << EmojXParser.T__28) | (1 << EmojXParser.T__29) | (1 << EmojXParser.T__30) | (1 << EmojXParser.T__31) | (1 << EmojXParser.BOOLEANO) | (1 << EmojXParser.NUMERO) | (1 << EmojXParser.CADENA) | (1 << EmojXParser.IDENTIFICADOR))) != 0):
                 self.state = 84
                 self.sentencia()
                 self.state = 89
@@ -706,6 +706,10 @@ class EmojXParser ( Parser ):
             return self.getTypedRuleContext(EmojXParser.Sentencia_asignacionContext,0)
 
 
+        def declaracion_variable(self):
+            return self.getTypedRuleContext(EmojXParser.Declaracion_variableContext,0)
+
+
         def getRuleIndex(self):
             return EmojXParser.RULE_sentencia
 
@@ -731,7 +735,7 @@ class EmojXParser ( Parser ):
         localctx = EmojXParser.SentenciaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_sentencia)
         try:
-            self.state = 100
+            self.state = 101
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,6,self._ctx)
             if la_ == 1:
@@ -780,6 +784,12 @@ class EmojXParser ( Parser ):
                 self.enterOuterAlt(localctx, 8)
                 self.state = 99
                 self.sentencia_asignacion()
+                pass
+
+            elif la_ == 9:
+                self.enterOuterAlt(localctx, 9)
+                self.state = 100
+                self.declaracion_variable()
                 pass
 
 
@@ -836,23 +846,23 @@ class EmojXParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 102
-            self.match(EmojXParser.T__9)
             self.state = 103
-            self.match(EmojXParser.T__3)
+            self.match(EmojXParser.T__9)
             self.state = 104
-            self.expresion(0)
+            self.match(EmojXParser.T__3)
             self.state = 105
-            self.match(EmojXParser.T__4)
+            self.expresion(0)
             self.state = 106
+            self.match(EmojXParser.T__4)
+            self.state = 107
             self.bloque()
-            self.state = 109
+            self.state = 110
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==EmojXParser.T__10:
-                self.state = 107
-                self.match(EmojXParser.T__10)
                 self.state = 108
+                self.match(EmojXParser.T__10)
+                self.state = 109
                 self.bloque()
 
 
@@ -905,15 +915,15 @@ class EmojXParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_sentencia_mientras)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 111
-            self.match(EmojXParser.T__11)
             self.state = 112
-            self.match(EmojXParser.T__3)
+            self.match(EmojXParser.T__11)
             self.state = 113
-            self.expresion(0)
+            self.match(EmojXParser.T__3)
             self.state = 114
-            self.match(EmojXParser.T__4)
+            self.expresion(0)
             self.state = 115
+            self.match(EmojXParser.T__4)
+            self.state = 116
             self.bloque()
         except RecognitionException as re:
             localctx.exception = re
@@ -972,41 +982,41 @@ class EmojXParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 117
-            self.match(EmojXParser.T__12)
             self.state = 118
+            self.match(EmojXParser.T__12)
+            self.state = 119
             self.match(EmojXParser.T__3)
-            self.state = 120
+            self.state = 121
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if _la==EmojXParser.IDENTIFICADOR:
-                self.state = 119
+                self.state = 120
                 self.sentencia_asignacion()
 
 
-            self.state = 122
+            self.state = 123
             self.match(EmojXParser.T__1)
-            self.state = 124
+            self.state = 125
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EmojXParser.T__3) | (1 << EmojXParser.T__16) | (1 << EmojXParser.T__27) | (1 << EmojXParser.BOOLEANO) | (1 << EmojXParser.NUMERO) | (1 << EmojXParser.CADENA) | (1 << EmojXParser.IDENTIFICADOR))) != 0):
-                self.state = 123
+                self.state = 124
                 self.expresion(0)
 
 
-            self.state = 126
+            self.state = 127
             self.match(EmojXParser.T__1)
-            self.state = 128
+            self.state = 129
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EmojXParser.T__3) | (1 << EmojXParser.T__16) | (1 << EmojXParser.T__27) | (1 << EmojXParser.BOOLEANO) | (1 << EmojXParser.NUMERO) | (1 << EmojXParser.CADENA) | (1 << EmojXParser.IDENTIFICADOR))) != 0):
-                self.state = 127
+                self.state = 128
                 self.expresion(0)
 
 
-            self.state = 130
-            self.match(EmojXParser.T__4)
             self.state = 131
+            self.match(EmojXParser.T__4)
+            self.state = 132
             self.bloque()
         except RecognitionException as re:
             localctx.exception = re
@@ -1054,17 +1064,17 @@ class EmojXParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 133
+            self.state = 134
             self.match(EmojXParser.T__13)
-            self.state = 135
+            self.state = 136
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EmojXParser.T__3) | (1 << EmojXParser.T__16) | (1 << EmojXParser.T__27) | (1 << EmojXParser.BOOLEANO) | (1 << EmojXParser.NUMERO) | (1 << EmojXParser.CADENA) | (1 << EmojXParser.IDENTIFICADOR))) != 0):
-                self.state = 134
+                self.state = 135
                 self.expresion(0)
 
 
-            self.state = 137
+            self.state = 138
             self.match(EmojXParser.T__1)
         except RecognitionException as re:
             localctx.exception = re
@@ -1111,15 +1121,15 @@ class EmojXParser ( Parser ):
         self.enterRule(localctx, 24, self.RULE_sentencia_imprimir)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 139
-            self.match(EmojXParser.T__14)
             self.state = 140
-            self.match(EmojXParser.T__3)
+            self.match(EmojXParser.T__14)
             self.state = 141
-            self.expresion(0)
+            self.match(EmojXParser.T__3)
             self.state = 142
-            self.match(EmojXParser.T__4)
+            self.expresion(0)
             self.state = 143
+            self.match(EmojXParser.T__4)
+            self.state = 144
             self.match(EmojXParser.T__1)
         except RecognitionException as re:
             localctx.exception = re
@@ -1166,9 +1176,9 @@ class EmojXParser ( Parser ):
         self.enterRule(localctx, 26, self.RULE_sentencia_expresion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 145
-            self.expresion(0)
             self.state = 146
+            self.expresion(0)
+            self.state = 147
             self.match(EmojXParser.T__1)
         except RecognitionException as re:
             localctx.exception = re
@@ -1218,13 +1228,13 @@ class EmojXParser ( Parser ):
         self.enterRule(localctx, 28, self.RULE_sentencia_asignacion)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 148
-            self.match(EmojXParser.IDENTIFICADOR)
             self.state = 149
-            self.match(EmojXParser.T__0)
+            self.match(EmojXParser.IDENTIFICADOR)
             self.state = 150
-            self.expresion(0)
+            self.match(EmojXParser.T__0)
             self.state = 151
+            self.expresion(0)
+            self.state = 152
             self.match(EmojXParser.T__1)
         except RecognitionException as re:
             localctx.exception = re
@@ -1282,30 +1292,30 @@ class EmojXParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 159
+            self.state = 160
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [EmojXParser.T__3, EmojXParser.BOOLEANO, EmojXParser.NUMERO, EmojXParser.CADENA, EmojXParser.IDENTIFICADOR]:
-                self.state = 154
+                self.state = 155
                 self.expresion_primaria()
                 pass
             elif token in [EmojXParser.T__27]:
-                self.state = 155
-                self.match(EmojXParser.T__27)
                 self.state = 156
+                self.match(EmojXParser.T__27)
+                self.state = 157
                 self.expresion(2)
                 pass
             elif token in [EmojXParser.T__16]:
-                self.state = 157
-                self.match(EmojXParser.T__16)
                 self.state = 158
+                self.match(EmojXParser.T__16)
+                self.state = 159
                 self.expresion(1)
                 pass
             else:
                 raise NoViableAltException(self)
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 172
+            self.state = 173
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1313,17 +1323,17 @@ class EmojXParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 170
+                    self.state = 171
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
                     if la_ == 1:
                         localctx = EmojXParser.ExpresionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expresion)
-                        self.state = 161
+                        self.state = 162
                         if not self.precpred(self._ctx, 5):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
-                        self.state = 162
+                        self.state = 163
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EmojXParser.T__2) | (1 << EmojXParser.T__15) | (1 << EmojXParser.T__16) | (1 << EmojXParser.T__17) | (1 << EmojXParser.T__18))) != 0)):
@@ -1331,18 +1341,18 @@ class EmojXParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 163
+                        self.state = 164
                         self.expresion(6)
                         pass
 
                     elif la_ == 2:
                         localctx = EmojXParser.ExpresionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expresion)
-                        self.state = 164
+                        self.state = 165
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
-                        self.state = 165
+                        self.state = 166
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EmojXParser.T__19) | (1 << EmojXParser.T__20) | (1 << EmojXParser.T__21) | (1 << EmojXParser.T__22) | (1 << EmojXParser.T__23) | (1 << EmojXParser.T__24))) != 0)):
@@ -1350,18 +1360,18 @@ class EmojXParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 166
+                        self.state = 167
                         self.expresion(5)
                         pass
 
                     elif la_ == 3:
                         localctx = EmojXParser.ExpresionContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expresion)
-                        self.state = 167
+                        self.state = 168
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
-                        self.state = 168
+                        self.state = 169
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==EmojXParser.T__25 or _la==EmojXParser.T__26):
@@ -1369,12 +1379,12 @@ class EmojXParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 169
+                        self.state = 170
                         self.expresion(4)
                         pass
 
              
-                self.state = 174
+                self.state = 175
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,14,self._ctx)
 
@@ -1438,46 +1448,46 @@ class EmojXParser ( Parser ):
         localctx = EmojXParser.Expresion_primariaContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_expresion_primaria)
         try:
-            self.state = 184
+            self.state = 185
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,15,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
-                self.state = 175
+                self.state = 176
                 self.match(EmojXParser.NUMERO)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
-                self.state = 176
+                self.state = 177
                 self.match(EmojXParser.CADENA)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
-                self.state = 177
+                self.state = 178
                 self.match(EmojXParser.BOOLEANO)
                 pass
 
             elif la_ == 4:
                 self.enterOuterAlt(localctx, 4)
-                self.state = 178
+                self.state = 179
                 self.match(EmojXParser.IDENTIFICADOR)
                 pass
 
             elif la_ == 5:
                 self.enterOuterAlt(localctx, 5)
-                self.state = 179
+                self.state = 180
                 self.llamada_funcion()
                 pass
 
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
-                self.state = 180
-                self.match(EmojXParser.T__3)
                 self.state = 181
-                self.expresion(0)
+                self.match(EmojXParser.T__3)
                 self.state = 182
+                self.expresion(0)
+                self.state = 183
                 self.match(EmojXParser.T__4)
                 pass
 
@@ -1531,19 +1541,19 @@ class EmojXParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 186
-            self.match(EmojXParser.IDENTIFICADOR)
             self.state = 187
+            self.match(EmojXParser.IDENTIFICADOR)
+            self.state = 188
             self.match(EmojXParser.T__3)
-            self.state = 189
+            self.state = 190
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EmojXParser.T__3) | (1 << EmojXParser.T__16) | (1 << EmojXParser.T__27) | (1 << EmojXParser.BOOLEANO) | (1 << EmojXParser.NUMERO) | (1 << EmojXParser.CADENA) | (1 << EmojXParser.IDENTIFICADOR))) != 0):
-                self.state = 188
+                self.state = 189
                 self.argumentos()
 
 
-            self.state = 191
+            self.state = 192
             self.match(EmojXParser.T__4)
         except RecognitionException as re:
             localctx.exception = re
@@ -1594,17 +1604,17 @@ class EmojXParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 193
+            self.state = 194
             self.expresion(0)
-            self.state = 198
+            self.state = 199
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==EmojXParser.T__6:
-                self.state = 194
-                self.match(EmojXParser.T__6)
                 self.state = 195
+                self.match(EmojXParser.T__6)
+                self.state = 196
                 self.expresion(0)
-                self.state = 200
+                self.state = 201
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 
@@ -1651,7 +1661,7 @@ class EmojXParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 201
+            self.state = 202
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << EmojXParser.T__9) | (1 << EmojXParser.T__28) | (1 << EmojXParser.T__29) | (1 << EmojXParser.T__30) | (1 << EmojXParser.T__31))) != 0)):
                 self._errHandler.recoverInline(self)

@@ -1,0 +1,16 @@
+💭 Programa de cálculo de factorial en EmojX
+
+🎯 factorial 🔓🔢 n🔒 🎨 🔢 🌀
+    🎲 🔓n 🔻🟰 1🔒 🌀
+        🎁 1🔚
+    🔄
+    🎁 n ✖️ factorial🔓n ➖ 1🔒🔚
+🔄
+
+🔢 numero 🟰 5🔚
+🔢 resultado 🟰 factorial🔓numero🔒🔚
+
+📢🔓📖El factorial de 📖🔒🔚
+📢🔓numero🔒🔚
+📢🔓📖 es 📖🔒🔚
+📢🔓resultado🔒🔚

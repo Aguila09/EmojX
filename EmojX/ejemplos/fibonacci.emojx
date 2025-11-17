@@ -1,0 +1,17 @@
+💭 Programa de Fibonacci en EmojX
+
+🎯 fibonacci 🔓🔢 n🔒 🎨 🔢 🌀
+    🎲 🔓n 🔻🟰 1🔒 🌀
+        🎁 n🔚
+    🔄
+    🎁 fibonacci🔓n ➖ 1🔒 ➕ fibonacci🔓n ➖ 2🔒🔚
+🔄
+
+🔢 i 🟰 0🔚
+
+📢🔓📖Serie de Fibonacci:📖🔒🔚
+
+🌪️ 🔓i 🔻 10🔒 🌀
+    📢🔓fibonacci🔓i🔒🔒🔚
+    i 🟰 i ➕ 1🔚
+🔄

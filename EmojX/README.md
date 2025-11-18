@@ -223,14 +223,25 @@ EmojX/
 ├── verificador_tipos.py     # Verificador de tipos
 ├── interprete.py            # Intérprete
 ├── main.py                  # Entrada principal
+├── run_tests.sh             # Script de pruebas
 ├── grammar/                 # Parser generado por ANTLR
 │   └── __init__.py
-└── ejemplos/                # Programas de ejemplo
-    ├── hola.emojx
-    ├── suma.emojx
-    ├── factorial.emojx
-    ├── maximo.emojx
-    └── fibonacci.emojx
+├── ejemplos/                # Programas de ejemplo
+│   ├── hola.emojx
+│   ├── suma.emojx
+│   ├── factorial.emojx
+│   ├── maximo.emojx
+│   ├── fibonacci.emojx
+│   ├── primos_simple.emojx
+│   └── demo_completa.emojx
+└── documentación/
+    ├── README.md            # Este archivo
+    ├── INSTALL.md           # Guía de instalación
+    ├── LANGUAGE_REFERENCE.md # Referencia del lenguaje
+    ├── SPECIFICATION.md     # Especificación formal
+    ├── TESTING.md           # Documentación de pruebas
+    ├── CONTRIBUTING.md      # Guía de contribución
+    └── PROJECT_SUMMARY.md   # Resumen del proyecto
 ```
 
 ## 🎯 Futuras Características
@@ -242,13 +253,40 @@ EmojX/
 - [ ] Optimizaciones
 - [ ] Más tipos de datos (floats, chars, etc.)
 
+## 🧪 Pruebas
+
+Para ejecutar todas las pruebas:
+
+```bash
+./run_tests.sh
+```
+
+O ejecutar manualmente:
+
+```bash
+for file in ejemplos/*.emojx; do
+    python main.py "$file"
+done
+```
+
+Ver [TESTING.md](TESTING.md) para más información sobre las pruebas.
+
+## 📖 Documentación Adicional
+
+- **[INSTALL.md](INSTALL.md)** - Guía de instalación detallada
+- **[LANGUAGE_REFERENCE.md](LANGUAGE_REFERENCE.md)** - Referencia completa del lenguaje
+- **[SPECIFICATION.md](SPECIFICATION.md)** - Especificación formal (gramática, semántica)
+- **[TESTING.md](TESTING.md)** - Documentación de pruebas
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guía para contribuidores
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Resumen del proyecto
+
 ## 🤝 Contribuir
 
-¡Las contribuciones son bienvenidas! Si quieres agregar nuevas características o mejorar el lenguaje, siéntete libre de hacer un fork y enviar un pull request.
+¡Las contribuciones son bienvenidas! Por favor lee [CONTRIBUTING.md](CONTRIBUTING.md) para conocer el proceso de contribución, estándares de código y cómo enviar pull requests.
 
 ## 📝 Licencia
 
-Este proyecto está bajo la licencia MIT.
+Este proyecto está bajo la [Licencia MIT](../LICENSE) - ver el archivo LICENSE para más detalles.
 
 ## 👨‍💻 Autor
 

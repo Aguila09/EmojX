@@ -1,0 +1,34 @@
+💭 Ejemplos de ERRORES SEMÁNTICOS que el verificador detecta
+
+💭 ERROR 1: Variable no declarada
+💭 x 🟰 10🔚  💭 Descomenta para ver: "Variable 'x' no está definida"
+
+💭 ERROR 2: Redeclaración en el mismo ámbito
+💭 🔢 numero 🟰 5🔚
+💭 🔢 numero 🟰 10🔚  💭 Descomenta para ver: "Variable 'numero' ya está definida"
+
+💭 ERROR 3: Tipos incompatibles
+💭 🔢 entero 🟰 📖texto📖🔚  💭 Descomenta para ver error de tipos
+
+💭 ERROR 4: Operación entre tipos incompatibles
+💭 🔢 a 🟰 5🔚
+💭 📝 b 🟰 📖hola📖🔚
+💭 🔢 suma 🟰 a ➕ b🔚  💭 Descomenta para ver error de operación
+
+💭 ERROR 5: Tipo de retorno incorrecto
+💭 🎯 obtener_numero 🔓🔒 🎨 🔢 🌀
+💭     🎁 📖texto📖🔚  💭 Descomenta para ver: retorna string en vez de int
+💭 🔄
+
+💭 ERROR 6: Número incorrecto de argumentos
+💭 🎯 sumar 🔓🔢 a🌊 🔢 b🔒 🎨 🔢 🌀
+💭     🎁 a ➕ b🔚
+💭 🔄
+💭 🔢 resultado 🟰 sumar🔓5🔒🔚  💭 Descomenta para ver: falta un argumento
+
+💭 Programa válido que SÍ funciona:
+🔢 x 🟰 10🔚
+🔢 y 🟰 20🔚
+🔢 suma 🟰 x ➕ y🔚
+📢🔓📖Suma correcta: 📖🔒🔚
+📢🔓suma🔒🔚

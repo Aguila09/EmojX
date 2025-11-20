@@ -6,7 +6,6 @@ from nodos_ast import *
 from sistema_tipos import SistemaTipos, TipoBase
 from simbolos import TablaSimbolos, Simbolo
 
-
 class VerificadorTipos:
     """Verifica los tipos en el AST"""
     

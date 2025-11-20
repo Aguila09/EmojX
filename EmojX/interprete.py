@@ -20,6 +20,12 @@ class Interprete:
         self.tabla_simbolos = TablaSimbolos()
         self.salida = []
     
+    def _posicion(self, nodo):
+        """Formatea la posición de un nodo para mensajes de error"""
+        if hasattr(nodo, 'linea') and hasattr(nodo, 'columna') and nodo.linea > 0:
+            return f" ({nodo.linea}:{nodo.columna})"
+        return ""
+    
     def ejecutar_programa(self, programa: Programa):
         """Ejecuta un programa completo"""
         # Primero registrar todas las funciones
@@ -164,24 +170,24 @@ class Interprete:
         elif isinstance(expr, Identificador):
             simbolo = self.tabla_simbolos.obtener(expr.nombre)
             if not simbolo:
-                raise Exception(f"Error: Variable '{expr.nombre}' no está definida")
+                raise Exception(f"Error{self._posicion(expr)}: Variable '{expr.nombre}' no está definida")
             return simbolo.valor
         
         elif isinstance(expr, ExpresionBinaria):
             izq = self.evaluar_expresion(expr.izquierda)
             der = self.evaluar_expresion(expr.derecha)
-            return self.aplicar_operador_binario(expr.operador, izq, der)
+            return self.aplicar_operador_binario(expr.operador, izq, der, expr)
         
         elif isinstance(expr, ExpresionUnaria):
             valor = self.evaluar_expresion(expr.expresion)
-            return self.aplicar_operador_unario(expr.operador, valor)
+            return self.aplicar_operador_unario(expr.operador, valor, expr)
         
         elif isinstance(expr, LlamadaFuncion):
             return self.ejecutar_llamada_funcion(expr)
         
-        raise Exception(f"Error: Tipo de expresión no soportado: {type(expr)}")
+        raise Exception(f"Error{self._posicion(expr)}: Tipo de expresión no soportado: {type(expr)}")
     
-    def aplicar_operador_binario(self, operador: str, izq, der):
+    def aplicar_operador_binario(self, operador: str, izq, der, nodo=None):
         """Aplica un operador binario"""
         # Operadores aritméticos
         if operador == "➕":
@@ -192,7 +198,8 @@ class Interprete:
             return izq * der
         elif operador == "➗":
             if der == 0:
-                raise Exception("Error: División por cero")
+                pos = self._posicion(nodo) if nodo else ""
+                raise Exception(f"Error{pos}: División por cero")
             return izq / der
         elif operador == "🎯":  # Módulo
             return izq % der
@@ -217,22 +224,24 @@ class Interprete:
         elif operador == "🎭":  # OR
             return izq or der
         
-        raise Exception(f"Error: Operador binario no soportado: {operador}")
+        pos = self._posicion(nodo) if nodo else ""
+        raise Exception(f"Error{pos}: Operador binario no soportado: {operador}")
     
-    def aplicar_operador_unario(self, operador: str, valor):
+    def aplicar_operador_unario(self, operador: str, valor, nodo=None):
         """Aplica un operador unario"""
         if operador == "➖":
             return -valor
         elif operador == "❗":
             return not valor
         
-        raise Exception(f"Error: Operador unario no soportado: {operador}")
+        pos = self._posicion(nodo) if nodo else ""
+        raise Exception(f"Error{pos}: Operador unario no soportado: {operador}")
     
     def ejecutar_llamada_funcion(self, llamada: LlamadaFuncion):
         """Ejecuta una llamada a función"""
         simbolo = self.tabla_simbolos.obtener(llamada.nombre)
         if not simbolo or not simbolo.es_funcion:
-            raise Exception(f"Error: Función '{llamada.nombre}' no está definida")
+            raise Exception(f"Error{self._posicion(llamada)}: Función '{llamada.nombre}' no está definida")
         
         decl_funcion = simbolo.valor
         

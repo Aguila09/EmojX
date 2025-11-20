@@ -8,6 +8,7 @@ if sys.version_info[1] > 5:
 else:
 	from typing.io import TextIO
 
+
 def serializedATN():
     with StringIO() as buf:
         buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3)")
@@ -203,6 +204,7 @@ class EmojXParser ( Parser ):
 
 
 
+
     class ProgramaContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -266,6 +268,7 @@ class EmojXParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class DeclaracionContext(ParserRuleContext):
         __slots__ = 'parser'
@@ -341,6 +344,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class Declaracion_variableContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -409,6 +413,7 @@ class EmojXParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class Declaracion_funcionContext(ParserRuleContext):
         __slots__ = 'parser'
@@ -489,6 +494,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ParametrosContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -552,6 +558,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ParametroContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -603,6 +610,7 @@ class EmojXParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class BloqueContext(ParserRuleContext):
         __slots__ = 'parser'
@@ -666,6 +674,7 @@ class EmojXParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class SentenciaContext(ParserRuleContext):
         __slots__ = 'parser'
@@ -801,6 +810,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class Sentencia_siContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -874,6 +884,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class Sentencia_mientrasContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -932,6 +943,7 @@ class EmojXParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class Sentencia_paraContext(ParserRuleContext):
         __slots__ = 'parser'
@@ -1026,6 +1038,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class Sentencia_retornoContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -1084,6 +1097,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class Sentencia_imprimirContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -1139,6 +1153,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class Sentencia_expresionContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -1187,6 +1202,7 @@ class EmojXParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class Sentencia_asignacionContext(ParserRuleContext):
         __slots__ = 'parser'
@@ -1243,6 +1259,7 @@ class EmojXParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class ExpresionContext(ParserRuleContext):
         __slots__ = 'parser'
@@ -1396,6 +1413,7 @@ class EmojXParser ( Parser ):
             self.unrollRecursionContexts(_parentctx)
         return localctx
 
+
     class Expresion_primariaContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -1500,6 +1518,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class Llamada_funcionContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -1563,6 +1582,7 @@ class EmojXParser ( Parser ):
             self.exitRule()
         return localctx
 
+
     class ArgumentosContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -1625,6 +1645,7 @@ class EmojXParser ( Parser ):
         finally:
             self.exitRule()
         return localctx
+
 
     class TipoContext(ParserRuleContext):
         __slots__ = 'parser'

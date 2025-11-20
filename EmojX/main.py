@@ -11,9 +11,114 @@ from grammar.EmojXParser import EmojXParser
 from constructor_ast import ConstructorAST
 from verificador_tipos import VerificadorTipos
 from interprete import Interprete
+import nodos_ast
 
 
-def compilar_y_ejecutar(codigo_fuente: str, archivo: str = "<stdin>", verificar_tipos: bool = True, verbose: bool = False):
+def imprimir_ast(nodo, nivel=0, prefijo=""):
+    """Imprime el AST de forma jerárquica"""
+    indent = "  " * nivel
+    pos = f"({nodo.linea}:{nodo.columna})" if hasattr(nodo, 'linea') and nodo.linea > 0 else ""
+    
+    if isinstance(nodo, nodos_ast.Programa):
+        print(f"{indent}Programa {pos}")
+        for decl in nodo.declaraciones:
+            imprimir_ast(decl, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.DeclaracionVariable):
+        print(f"{indent}DeclaracionVariable {pos}: {nodo.tipo.nombre} {nodo.nombre}")
+        if nodo.valor:
+            imprimir_ast(nodo.valor, nivel + 1, "valor=")
+    
+    elif isinstance(nodo, nodos_ast.DeclaracionFuncion):
+        print(f"{indent}DeclaracionFuncion {pos}: {nodo.nombre} -> {nodo.tipo_retorno.nombre}")
+        if nodo.parametros:
+            print(f"{indent}  Parametros:")
+            for param in nodo.parametros:
+                print(f"{indent}    {param.tipo.nombre} {param.nombre}")
+        imprimir_ast(nodo.bloque, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.Bloque):
+        print(f"{indent}Bloque {pos}")
+        for sent in nodo.sentencias:
+            imprimir_ast(sent, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.Si):
+        print(f"{indent}Si {pos}")
+        print(f"{indent}  Condicion:")
+        imprimir_ast(nodo.condicion, nivel + 2)
+        print(f"{indent}  Entonces:")
+        imprimir_ast(nodo.bloque_si, nivel + 2)
+        if nodo.bloque_sino:
+            print(f"{indent}  Sino:")
+            imprimir_ast(nodo.bloque_sino, nivel + 2)
+    
+    elif isinstance(nodo, nodos_ast.Mientras):
+        print(f"{indent}Mientras {pos}")
+        print(f"{indent}  Condicion:")
+        imprimir_ast(nodo.condicion, nivel + 2)
+        imprimir_ast(nodo.bloque, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.Para):
+        print(f"{indent}Para {pos}")
+        if nodo.inicializacion:
+            print(f"{indent}  Init:")
+            imprimir_ast(nodo.inicializacion, nivel + 2)
+        if nodo.condicion:
+            print(f"{indent}  Cond:")
+            imprimir_ast(nodo.condicion, nivel + 2)
+        if nodo.incremento:
+            print(f"{indent}  Inc:")
+            imprimir_ast(nodo.incremento, nivel + 2)
+        imprimir_ast(nodo.bloque, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.Retorno):
+        print(f"{indent}Retorno {pos}")
+        if nodo.valor:
+            imprimir_ast(nodo.valor, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.Imprimir):
+        print(f"{indent}Imprimir {pos}")
+        imprimir_ast(nodo.expresion, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.Asignacion):
+        print(f"{indent}Asignacion {pos}: {nodo.nombre}")
+        imprimir_ast(nodo.valor, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.SentenciaExpresion):
+        print(f"{indent}SentenciaExpresion {pos}")
+        imprimir_ast(nodo.expresion, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.ExpresionBinaria):
+        print(f"{indent}{prefijo}ExpresionBinaria {pos}: {nodo.operador}")
+        imprimir_ast(nodo.izquierda, nivel + 1, "izq=")
+        imprimir_ast(nodo.derecha, nivel + 1, "der=")
+    
+    elif isinstance(nodo, nodos_ast.ExpresionUnaria):
+        print(f"{indent}{prefijo}ExpresionUnaria {pos}: {nodo.operador}")
+        imprimir_ast(nodo.expresion, nivel + 1)
+    
+    elif isinstance(nodo, nodos_ast.LlamadaFuncion):
+        print(f"{indent}{prefijo}LlamadaFuncion {pos}: {nodo.nombre}")
+        if nodo.argumentos:
+            print(f"{indent}  Args:")
+            for arg in nodo.argumentos:
+                imprimir_ast(arg, nivel + 2)
+    
+    elif isinstance(nodo, nodos_ast.Numero):
+        print(f"{indent}{prefijo}Numero {pos}: {nodo.valor}")
+    
+    elif isinstance(nodo, nodos_ast.Cadena):
+        print(f"{indent}{prefijo}Cadena {pos}: \"{nodo.valor}\"")
+    
+    elif isinstance(nodo, nodos_ast.Booleano):
+        valor_emoji = "✅" if nodo.valor else "❌"
+        print(f"{indent}{prefijo}Booleano {pos}: {valor_emoji}")
+    
+    elif isinstance(nodo, nodos_ast.Identificador):
+        print(f"{indent}{prefijo}Identificador {pos}: {nodo.nombre}")
+
+
+def compilar_y_ejecutar(codigo_fuente: str, archivo: str = "<stdin>", verificar_tipos: bool = True, verbose: bool = False, show_parse_tree: bool = False, show_ast: bool = False):
     """
     Compila y ejecuta código EmojX
     
@@ -22,6 +127,8 @@ def compilar_y_ejecutar(codigo_fuente: str, archivo: str = "<stdin>", verificar_
         archivo: Nombre del archivo (para mensajes de error)
         verificar_tipos: Si se debe verificar tipos antes de ejecutar
         verbose: Si se debe mostrar información detallada
+        show_parse_tree: Si se debe mostrar el Parse Tree de ANTLR
+        show_ast: Si se debe mostrar el AST construido
     """
     try:
         # Análisis léxico
@@ -37,11 +144,25 @@ def compilar_y_ejecutar(codigo_fuente: str, archivo: str = "<stdin>", verificar_
         parser = EmojXParser(token_stream)
         tree = parser.programa()
         
+        # Mostrar Parse Tree si se solicita
+        if show_parse_tree:
+            print("\n📊 Parse Tree (ANTLR):")
+            print("-" * 50)
+            print(tree.toStringTree(recog=parser))
+            print("-" * 50 + "\n")
+        
         # Construcción del AST
         if verbose:
             print("🌳 Construcción del AST...")
         constructor = ConstructorAST()
         ast = constructor.visit(tree)
+        
+        # Mostrar AST si se solicita
+        if show_ast:
+            print("\n🌳 Abstract Syntax Tree (AST):")
+            print("-" * 50)
+            imprimir_ast(ast)
+            print("-" * 50 + "\n")
         
         # Verificación de tipos
         if verificar_tipos:
@@ -78,14 +199,14 @@ def compilar_y_ejecutar(codigo_fuente: str, archivo: str = "<stdin>", verificar_
         return False
 
 
-def ejecutar_archivo(ruta_archivo: str, verificar_tipos: bool = True, verbose: bool = False):
+def ejecutar_archivo(ruta_archivo: str, verificar_tipos: bool = True, verbose: bool = False, show_parse_tree: bool = False, show_ast: bool = False):
     """Ejecuta un archivo EmojX"""
     try:
         with open(ruta_archivo, 'r', encoding='utf-8') as f:
             codigo = f.read()
         
         print(f"📂 Ejecutando: {ruta_archivo}")
-        return compilar_y_ejecutar(codigo, ruta_archivo, verificar_tipos, verbose)
+        return compilar_y_ejecutar(codigo, ruta_archivo, verificar_tipos, verbose, show_parse_tree, show_ast)
         
     except FileNotFoundError:
         print(f"❌ Error: Archivo '{ruta_archivo}' no encontrado")
@@ -293,8 +414,11 @@ def main():
             archivo = comando
             verbose = '-v' in sys.argv or '--verbose' in sys.argv
             sin_verificacion = '--no-check' in sys.argv
+            mostrar_parse_tree = '--parse-tree' in sys.argv
+            mostrar_ast = '--ast' in sys.argv
             
-            exito = ejecutar_archivo(archivo, verificar_tipos=not sin_verificacion, verbose=verbose)
+            exito = ejecutar_archivo(archivo, verificar_tipos=not sin_verificacion, verbose=verbose, 
+                                    show_parse_tree=mostrar_parse_tree, show_ast=mostrar_ast)
             sys.exit(0 if exito else 1)
 
 

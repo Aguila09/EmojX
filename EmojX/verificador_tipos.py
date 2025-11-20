@@ -15,6 +15,12 @@ class VerificadorTipos:
         self.errores = []
         self.tipo_retorno_actual = None
     
+    def _posicion(self, nodo):
+        """Formatea la posición de un nodo para mensajes de error"""
+        if hasattr(nodo, 'linea') and hasattr(nodo, 'columna') and nodo.linea > 0:
+            return f" ({nodo.linea}:{nodo.columna})"
+        return ""
+    
     def verificar_programa(self, programa: Programa) -> bool:
         """Verifica un programa completo"""
         for declaracion in programa.declaraciones:
@@ -70,7 +76,7 @@ class VerificadorTipos:
             tipo_valor = self.verificar_expresion(decl.valor)
             if not SistemaTipos.compatibles(tipo_valor, tipo_declarado):
                 self.errores.append(
-                    f"Error de tipo: No se puede asignar {SistemaTipos.tipo_a_emoji(tipo_valor)} "
+                    f"Error de tipo{self._posicion(decl)}: No se puede asignar {SistemaTipos.tipo_a_emoji(tipo_valor)} "
                     f"a variable de tipo {SistemaTipos.tipo_a_emoji(tipo_declarado)}"
                 )
         
@@ -117,7 +123,7 @@ class VerificadorTipos:
         """Verifica una sentencia condicional"""
         tipo_condicion = self.verificar_expresion(si.condicion)
         if tipo_condicion != TipoBase.BOOLEANO:
-            self.errores.append("Error: La condición del 'si' debe ser booleana")
+            self.errores.append(f"Error{self._posicion(si)}: La condición del 'si' debe ser booleana")
         
         self.verificar_bloque(si.bloque_si)
         if si.bloque_sino:
@@ -127,7 +133,7 @@ class VerificadorTipos:
         """Verifica un bucle mientras"""
         tipo_condicion = self.verificar_expresion(mientras.condicion)
         if tipo_condicion != TipoBase.BOOLEANO:
-            self.errores.append("Error: La condición del 'mientras' debe ser booleana")
+            self.errores.append(f"Error{self._posicion(mientras)}: La condición del 'mientras' debe ser booleana")
         
         self.verificar_bloque(mientras.bloque)
     
@@ -143,7 +149,7 @@ class VerificadorTipos:
         if para.condicion:
             tipo_condicion = self.verificar_expresion(para.condicion)
             if tipo_condicion != TipoBase.BOOLEANO:
-                self.errores.append("Error: La condición del 'para' debe ser booleana")
+                self.errores.append(f"Error{self._posicion(para)}: La condición del 'para' debe ser booleana")
         
         if para.incremento:
             self.verificar_expresion(para.incremento)
@@ -159,12 +165,12 @@ class VerificadorTipos:
             tipo_retorno = self.verificar_expresion(retorno.valor)
             if self.tipo_retorno_actual and not SistemaTipos.compatibles(tipo_retorno, self.tipo_retorno_actual):
                 self.errores.append(
-                    f"Error: Tipo de retorno incompatible. "
+                    f"Error{self._posicion(retorno)}: Tipo de retorno incompatible. "
                     f"Esperado {SistemaTipos.tipo_a_emoji(self.tipo_retorno_actual)}, "
                     f"obtenido {SistemaTipos.tipo_a_emoji(tipo_retorno)}"
                 )
         elif self.tipo_retorno_actual and self.tipo_retorno_actual != TipoBase.VOID:
-            self.errores.append("Error: Se esperaba un valor de retorno")
+            self.errores.append(f"Error{self._posicion(retorno)}: Se esperaba un valor de retorno")
     
     def verificar_imprimir(self, imprimir: Imprimir) -> None:
         """Verifica una sentencia de impresión"""
@@ -174,7 +180,7 @@ class VerificadorTipos:
         """Verifica una asignación"""
         simbolo = self.tabla_simbolos.obtener(asig.nombre)
         if not simbolo:
-            self.errores.append(f"Error: Variable '{asig.nombre}' no está definida")
+            self.errores.append(f"Error{self._posicion(asig)}: Variable '{asig.nombre}' no está definida")
             return
         
         tipo_valor = self.verificar_expresion(asig.valor)
@@ -182,7 +188,7 @@ class VerificadorTipos:
         
         if not SistemaTipos.compatibles(tipo_valor, tipo_variable):
             self.errores.append(
-                f"Error de tipo: No se puede asignar {SistemaTipos.tipo_a_emoji(tipo_valor)} "
+                f"Error de tipo{self._posicion(asig)}: No se puede asignar {SistemaTipos.tipo_a_emoji(tipo_valor)} "
                 f"a variable de tipo {SistemaTipos.tipo_a_emoji(tipo_variable)}"
             )
     
@@ -203,7 +209,7 @@ class VerificadorTipos:
         elif isinstance(expr, Identificador):
             simbolo = self.tabla_simbolos.obtener(expr.nombre)
             if not simbolo:
-                self.errores.append(f"Error: Variable '{expr.nombre}' no está definida")
+                self.errores.append(f"Error{self._posicion(expr)}: Variable '{expr.nombre}' no está definida")
                 return TipoBase.ERROR
             return SistemaTipos.emoji_a_tipo(simbolo.tipo)
         
@@ -214,7 +220,7 @@ class VerificadorTipos:
             
             if tipo_resultado == TipoBase.ERROR:
                 self.errores.append(
-                    f"Error de tipo: Operador '{expr.operador}' no aplicable a "
+                    f"Error de tipo{self._posicion(expr)}: Operador '{expr.operador}' no aplicable a "
                     f"{SistemaTipos.tipo_a_emoji(tipo_izq)} y {SistemaTipos.tipo_a_emoji(tipo_der)}"
                 )
             
@@ -226,7 +232,7 @@ class VerificadorTipos:
             
             if tipo_resultado == TipoBase.ERROR:
                 self.errores.append(
-                    f"Error de tipo: Operador '{expr.operador}' no aplicable a "
+                    f"Error de tipo{self._posicion(expr)}: Operador '{expr.operador}' no aplicable a "
                     f"{SistemaTipos.tipo_a_emoji(tipo_expr)}"
                 )
             
@@ -235,17 +241,17 @@ class VerificadorTipos:
         elif isinstance(expr, LlamadaFuncion):
             simbolo = self.tabla_simbolos.obtener(expr.nombre)
             if not simbolo:
-                self.errores.append(f"Error: Función '{expr.nombre}' no está definida")
+                self.errores.append(f"Error{self._posicion(expr)}: Función '{expr.nombre}' no está definida")
                 return TipoBase.ERROR
             
             if not simbolo.es_funcion:
-                self.errores.append(f"Error: '{expr.nombre}' no es una función")
+                self.errores.append(f"Error{self._posicion(expr)}: '{expr.nombre}' no es una función")
                 return TipoBase.ERROR
             
             # Verificar número de argumentos
             if len(expr.argumentos) != len(simbolo.parametros):
                 self.errores.append(
-                    f"Error: Función '{expr.nombre}' espera {len(simbolo.parametros)} argumentos, "
+                    f"Error{self._posicion(expr)}: Función '{expr.nombre}' espera {len(simbolo.parametros)} argumentos, "
                     f"pero se proporcionaron {len(expr.argumentos)}"
                 )
                 return TipoBase.ERROR
@@ -257,7 +263,7 @@ class VerificadorTipos:
                 
                 if not SistemaTipos.compatibles(tipo_arg, tipo_esperado):
                     self.errores.append(
-                        f"Error de tipo: Argumento {i+1} de '{expr.nombre}' - "
+                        f"Error de tipo{self._posicion(expr)}: Argumento {i+1} de '{expr.nombre}' - "
                         f"esperado {SistemaTipos.tipo_a_emoji(tipo_esperado)}, "
                         f"obtenido {SistemaTipos.tipo_a_emoji(tipo_arg)}"
                     )
